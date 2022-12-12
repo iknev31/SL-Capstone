@@ -1,0 +1,281 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_custName",
+						"type": "string"
+					}
+				],
+				"name": "addCustomerKYC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_bankName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "addNewBank",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_custName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_custData",
+						"type": "string"
+					}
+				],
+				"name": "addNewCustToBank",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_add",
+						"type": "address"
+					}
+				],
+				"name": "allowBankToAddNewCustomer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_add",
+						"type": "address"
+					}
+				],
+				"name": "allowBankToDoKYC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "banks",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "bankName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "bankAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAllowedToAddCust",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAllowedToDoKYC",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "kycCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_add",
+						"type": "address"
+					}
+				],
+				"name": "blockBankToAddNewCustomer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_add",
+						"type": "address"
+					}
+				],
+				"name": "blockBankToDoKYC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "customerDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "custName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "custData",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "custKYCStatus",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "custBankAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_custName",
+						"type": "string"
+					}
+				],
+				"name": "fetchCustKYCStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_custName",
+						"type": "string"
+					}
+				],
+				"name": "getCustData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "custName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "custData",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Capstone/Project-1-KYC/KYC_Verification.sol": "kycBank"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Capstone/Project-1-KYC/KYC_Verification.sol": {
+			"keccak256": "0xbc6b8bde45061e48905b51ae76e43b41417070130b59dde09dea6db6192690b2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d346fb60659f71c967fb37aa9b86da4bbbfd381c9f9fbb338b62fa54654116e7",
+				"dweb:/ipfs/QmcY14FduYWktBp3hrDfWPys3Gj8q6HcURWDrtatjkfMoA"
+			]
+		}
+	},
+	"version": 1
+}
