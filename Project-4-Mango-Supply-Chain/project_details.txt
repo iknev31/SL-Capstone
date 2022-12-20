@@ -1,0 +1,150 @@
+Mango Supply Chain
+Course-end Project 4
+
+DESCRIPTION
+
+Many people across the globe are getting sick due to the lack of food hygiene. 
+A better tracking technique is required to trace back the origin of the food item so that the end user can authenticate food items and consume them without any worry.
+
+
+Background of the problem statement:
+
+Food quality and safety is one of the hot topics today where everyone is concerned about the food quality that they are consuming.
+
+Food items like fruits generally don’t have any expiry date mentioned so it becomes really important to understand the origin of these food items and understand when the farmer sent it to the distributor and so on. 
+Generally, the below cycle is followed in supply chain for fruit items:
+
+Producer: The producer can harvest fruits, sell them to distributors, and track authenticity.
+Distributor: The distributor can buy the fruits, distribute them, and track authenticity.
+Retailer: The retailer can buy the fruits, put them for sale, and track authenticity.
+Consumer: The consumer can buy the fruits and track authenticity.
+ 
+
+Features of the application:
+
+Mango as an asset has the following parameters:
+
+productId: Asset Id
+productDescription: Description of the asset
+producerName: Producer or farmer name
+producerAddress: Producer or farmer address
+harvestDate: Harvest date
+distributorName: Distributor name
+distributorAddress: Distributor address
+prodToDistDate: Producer to distributor transfer date
+retailerName: Retailer name
+retailerAddress: Retailer address
+distToRetaDate: Distributor to retailer transfer date
+ 
+productId
+productDescription
+producerName
+producerAddress
+harvestDate
+distributorName
+distributorAddress
+prodToDistDate
+retailerName
+retailerAddress
+distToRetaDate
+
+1. Add a new asset (mango) to the ledger:
+
+This function is used to add a new asset (mango) to the ledger. This function is called by the producer or farmer by using the below parameters:
+
+Input parameters:
+
+             * @param ctx                                    the transaction context
+
+             * @param id                          the product id of the mango
+
+             * @param description           the description of the mango
+
+             * @param producerName    producer or farmer name
+
+             * @param producerAddress producer or farmer address
+
+             * @param harvestdate          harvest date of the mango
+
+             * @return the mango details
+
+             */
+
+This function does the following check as well:
+
+Same asset with the same product ID does not exist already
+ 
+
+2. Transfer the asset to distributor from producer:
+
+This function helps to transfer the asset from producer (farmer) to distributor.
+
+Input parameters:
+
+       * @param ctx                                                the transaction context
+
+       * @param id                                      product ID of the mango
+
+       * @param distributorName              distributor name
+
+       * @param distributorAddress           distributor address
+
+       * @param transferDate                    transaction date between distributor and producer
+
+       * @return the product id
+
+       */
+
+This function does the following check as well:
+
+The asset should be present in the ledger.
+ 
+
+3. Transfer the asset to retailer from distributor:
+
+This function helps to transfer mango ownership to a retailer from a distributor.
+
+ Input parameters:
+
+       * @param ctx                                    the transaction context
+
+       * @param id                          product ID of the mango
+
+       * @param retailerName       retailer name
+
+       * @param retailerAddress    retailer address
+
+       * @param transferDate        transaction date between distributor and retailer
+
+       * @return the product id
+
+       */
+
+This function does the following check as well:
+
+The asset should be present in the ledger.
+ 
+
+4. View asset details from ledger:
+
+This function helps to retrieve asset product details from the ledger.
+
+      Input parameters
+
+      * @param ctx the transaction context
+
+      * @param id   product Id of the mango
+
+      * @return mango supply chain details
+
+*/
+
+ 
+
+Recommended technologies:
+
+IDE tool: Eclipse
+Chaincode language: Java
+Build automation tool: Gradle
+Blockchain: Hyperledger Fabric
+Server: Test network
