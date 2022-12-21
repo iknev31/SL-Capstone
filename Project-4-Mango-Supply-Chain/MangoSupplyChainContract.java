@@ -28,7 +28,6 @@ public final class MangoSupplyChainContract implements ContractInterface {
 	 */
 	@Transaction()
 	public void initLedger(final Context ctx) {
-
 		ChaincodeStub stub = ctx.getStub();
 		MangoSupplyChain mangosupplychain = new MangoSupplyChain("pr1", "Mango Product 1", "Producer1", "Chennai",
 				"1/1/2022", "Distributor1", "Adyar", "5/1/2022", "Retailer1", "Royapettah", "6/1/2022");
@@ -63,7 +62,6 @@ public final class MangoSupplyChainContract implements ContractInterface {
 			final String producerName, final String producerAddress, final String harvestDate) {
 
 		ChaincodeStub stub = ctx.getStub();
-
 		String AssetState = stub.getStringState(productId);
 
 		if (!AssetState.isEmpty()) {
@@ -85,10 +83,7 @@ public final class MangoSupplyChainContract implements ContractInterface {
 				throw new ChaincodeException(errorMessage, MSCErrors.INVALID_INPUT.toString());
 			}
 		} catch (ParseException ex) {
-//			String errorMessage = String.format("Given date %s is invalid. Please enter the date in dd/MM/yyyy format",
-//					harvestDate);
-//			System.out.println(errorMessage);
-//			throw new ChaincodeException(errorMessage, MSCErrors.INVALID_INPUT.toString());
+			ex.printStackTrace();
 		}
 
 		AssetState = genson.serialize(mangosupplychain);
@@ -120,8 +115,8 @@ public final class MangoSupplyChainContract implements ContractInterface {
 	@Transaction()
 	public MangoSupplyChain transferAssetProdToDist(final Context ctx, final String productId,
 			final String distributorName, final String distributorAddress, final String prodToDistDate) {
-		ChaincodeStub stub = ctx.getStub();
 
+		ChaincodeStub stub = ctx.getStub();
 		String AssetState = stub.getStringState(productId);
 
 		if (AssetState.isEmpty()) {
@@ -192,8 +187,8 @@ public final class MangoSupplyChainContract implements ContractInterface {
 	@Transaction()
 	public MangoSupplyChain transferAssetDistToRetailer(final Context ctx, final String productId,
 			final String retailerName, final String retailerAddress, final String distToRetaDate) {
+		
 		ChaincodeStub stub = ctx.getStub();
-
 		String AssetState = stub.getStringState(productId);
 
 		if (AssetState.isEmpty()) {
@@ -263,8 +258,8 @@ public final class MangoSupplyChainContract implements ContractInterface {
 	 */
 	@Transaction()
 	public MangoSupplyChain viewAssetDetails(final Context ctx, final String productId) {
+		
 		ChaincodeStub stub = ctx.getStub();
-
 		String AssetState = stub.getStringState(productId);
 
 		if (AssetState.isEmpty()) {
